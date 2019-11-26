@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Madrid</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./bootsrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="form.css" />
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"><img src="./icons/logo2.png" alt="" class="img-fluid"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Acceso</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Presentación</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">Socios</a>
+                    </li>                    
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                    </li>                    
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                  </form>
+                </div>
+              </nav>
+<!-- MAP -->
+<div class="container">
+        <div class="mt-5" id="mapJumbotron">
+                <div id='map'></div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-1 col-lg-1 offset-lg-3">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="ACCESO A RECURSOS">
+                    <img src="./icons/accesoArecursos.png" alt="" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-sm-1 col-lg-1">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="COMERCIALIZACIÓN">
+                    <img src="./icons/comercializacion.png" alt="" class="img-fluid">
+                </a>
+            </div>            
+            <div class="col-sm-1 col-lg-1">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="MANEJO AGRARIO">
+                    <img src="./icons/manejoAgrario.png" alt="" class="img-fluid">
+                </a>
+            </div>            
+            <div class="col-sm-1 col-lg-1">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="PAISAJE Y ORDENACION TERRITORIAL">
+                    <img src="./icons/paisaje.png" alt="" class="img-fluid">
+                </a>
+            </div>            
+            <div class="col-sm-1 col-lg-1">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="SALUD Y NUTRICIÓN">
+                    <img src="./icons/saludYnutricion.png" alt="" class="img-fluid">
+                </a>
+            </div>            
+            <div class="col-sm-1 col-lg-1">
+                <a href="#"  data-toggle="tooltip" data-placement="top" title="SOSTENIBILIDAD SISTEMAS ALIMENTARIOS">
+                    <img src="./icons/sistemasAlimentarios.png" alt="" class="img-fluid">
+                </a>
+            </div>            
+        </div>
+</div>
+
+
+<!-- SCRIPT -->
+</body>
+<script type="text/javascript" src="madrid.geojson.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="./bootsrap/bootstrap.min.js"></script>
+</html>
