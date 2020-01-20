@@ -43,9 +43,24 @@
               </nav>
 <!-- MAP -->
 <div class="container">
+  <div class="mt-5" data-toggle="buttons">
+    <h3>Filtrar por: <span id="filtro">Distritos</span></h3>
+    <div class="row">
+      <div class="col-1">
+        <button class="btn p-1 btn-success" onclick="changeLayer('Distritos')">Distritos</button>
+      </div>
+      <div class="col-2">
+        <button class="btn p-1 btn-success" onclick="changeLayer('Espacios Naturales')">Espacios Naturales</button>
+      </div>
+      <div class="col-1">
+        <button class="btn p-1 btn-success" onclick="changeLayer('Comarcas')">Comarcas Agrarias</button>
+      </div>
+    </div>
+  </div>
         <div class="mt-5 align-items-center" id="mapJumbotron">
                 <div id='map'></div>
         </div>
+
         <div class="align-items-center row my-5">
                 <a class="col" href="#"  data-toggle="tooltip" data-placement="top" title="ACCESO A RECURSOS">
                     <img src="./icons/accesoArecursos.mini.png" alt="" class="img-fluid">

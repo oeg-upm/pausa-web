@@ -1,3 +1,4 @@
+
 function Map(geoLocations){
 
   function refreshMap(){
@@ -11,9 +12,7 @@ function Map(geoLocations){
 
   refreshMap();
 
-  var map = L.map('map', {
-
-  });
+  var map = L.map('map');
 
   map.createPane('labels');
 
@@ -134,6 +133,18 @@ function init() {
 // Parse JSON string into object
   var geoLocations = getMadrid();
   Map(geoLocations);
+}
+function changeLayer(layerName){
+    console.log("Cambiamos a: " + layerName)
+    if(layerName == 'Comarcas'){
+         Map(getComarcas());
+    }else if( layerName == 'Espacios Naturales'){
+         Map(getParques());
+    }else{
+        Map(getMadrid());
+    }
+    $("#filtro").html(layerName + "")
+
 }
 init();
 $(function () {
