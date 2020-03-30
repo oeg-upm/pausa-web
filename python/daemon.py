@@ -32,7 +32,8 @@ def getPackageData(packages):
                 len(resJson['result']['descriptor_geografico']) > 0
                 ):
                 data =  resJson['result']['descriptor_geografico'].split(' ')
-                result[package] = {
+                result[data[0]] = {
+                        'datasetName': package, 
                         'desc':data[0],
                         'name':data[1] if len(data) > 1 else "",
                         'link':datasetLink + package
@@ -53,6 +54,8 @@ def main():
     packages = getPackageList()
     print(packages)
     packagesData = getPackageData(packages)
+    with open('datasetsInfo.json', 'a') as f:
+        f.write(json.dumps(packagesData, indent=2))
     print(json.dumps(packagesData))
 
 if __name__ == '__main__':
