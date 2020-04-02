@@ -1,14 +1,12 @@
 {
   "28079": {
-    "datasetName": "productores-agrarios-madrid-mendez",
     "desc": "28079",
     "name": "",
+    "centroid_x": "-3.89513242131",
+    "centroid_y": "40.46875641690",
+    "x_utm": "424116.308369",
+    "y_utm": "4480171.450270",
+    "datasetName": "productores-agrarios-madrid-mendez",
     "link": "https://gopausa.oeg-upm.net/dataset/productores-agrarios-madrid-mendez"
-  },
-  "Madrid": {
-    "datasetName": "test2",
-    "desc": "Madrid",
-    "name": "",
-    "link": "https://gopausa.oeg-upm.net/dataset/test2"
   }
 }

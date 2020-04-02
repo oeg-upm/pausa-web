@@ -2,12 +2,7 @@
 function Map(geoLocations){
 
   function refreshMap(){
-      var remove = document.getElementById('map');
-      remove.parentNode.removeChild(remove)
-      var p = document.getElementById('mapJumbotron')
-      var element = document.createElement('div');
-      element.setAttribute('id', 'map');
-      p.appendChild(element)
+    document.getElementById('mapJumbotron').innerHTML = "<div id='map'></div>";
   }
 
   refreshMap();
@@ -21,7 +16,6 @@ function Map(geoLocations){
 
   // Layers in this pane are non-interactive and do not obscure mouse/touch events
   map.getPane('labels').style.pointerEvents = 'none';
-
   var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
 
       var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
@@ -64,8 +58,6 @@ function Map(geoLocations){
 
 
   geojson = L.geoJson(geoLocations).addTo(map);
-
-  
   map.fitBounds(L.geoJson(geoLocations).getBounds())
   // map.setVgeoLocationsiew({ lat: 47.040182144806664, lng: 9.667968750000002 }, 2);
 
@@ -104,7 +96,35 @@ function Map(geoLocations){
       function zoomToFeature(e) {
           map.fitBounds(e.target.getBounds());
       }
-
+      function showDatasets(layerProps){
+          if(Object.keys(layerProps).includes('datasets') && layerProps.datasets.length !== 0){
+              console.log(layerProps)
+              let datasets = "<ul>"
+              layerProps.datasets.forEach((el) => {
+                datasets += `<li><a href="${el.link}">${el.datasetName}</a></li>`
+              });
+              datasets += "</ul>"
+              let name = Object.keys(layerProps).includes('nameunit') ? layerProps.nameunit:layerProps.NOM_COMAR
+              let modal = `
+            <div id="modal" class="modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Datasets de ${name}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                   ${datasets}
+                  </div>
+                </div>
+              </div>
+            </div>`
+            document.getElementById("modal-wrapper").innerHTML = modal;
+            $("#modal").modal()
+          }
+      }
 
 
 
@@ -112,12 +132,12 @@ function Map(geoLocations){
           layer.on({
               mouseover: highlightFeature,
               mouseout: resetHighlight,
-              click: zoomToFeature
+              click: (e) =>{showDatasets(layer.feature.properties)}
           });
-          layer.bindPopup(function (layer){
-              // console.log(layer.feature.properties.adm0_a3);
-              return layer.feature.properties.nameunit;
-          });
+        //   layer.bindPopup(function (layer){
+        //       // console.log(layer.feature.properties.adm0_a3);
+        //       return '' + layer.feature.properties.nameunit;
+        //   });
           
       }
 
@@ -131,17 +151,42 @@ function Map(geoLocations){
 }
 function init() {
 // Parse JSON string into object
-  var geoLocations = getMadrid();
-  Map(geoLocations);
+    let datasetInfo = null
+    loadJSON().then((data) => {
+        console.log(data);
+        datasetInfo = data;
+        return getMadrid();
+    }).then((data) => {
+        Map(data);
+        insertData(data,datasetInfo)
+    })
+    .catch((err) => {
+        console.log(err)
+    });
 }
 function changeLayer(layerName){
     console.log("Cambiamos a: " + layerName)
     if(layerName == 'Comarcas'){
-         Map(getComarcas());
+         getComarcas().then((data) =>{
+             Map(data);
+         }).catch((err) => {
+             console.log(layerName)
+             console.log(err)
+         })
     }else if( layerName == 'Espacios Naturales'){
-         Map(getParques());
+         getParques().then((data) =>{
+             Map(data);
+         }).catch((err) => {
+             console.log(layerName)
+             console.log(err)
+         })
     }else{
-        Map(getMadrid());
+        getMadrid().then((data) =>{
+            Map(data);
+        }).catch((err) => {
+            console.log(layerName)
+            console.log(err)
+        })
     }
     $("#filtro").html(layerName + "")
 
