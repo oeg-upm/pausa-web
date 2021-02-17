@@ -1,6 +1,10 @@
+//const path = "/base/data/"
+const path = "/python/geojsons/"
+
 function getMadrid(){
+console.log(path + 'madrid.distritos.geojson.json')
   return new Promise((resolve, reject) => {
-    axios.get('python/geoJsons/madrid.distritos.geojson.json')
+    axios.get(path + 'madrid.distritos.geojson.json?' + Date.now().toString())
     .then((response) => {
       resolve(response.data)
     }).catch((err) => {
@@ -10,28 +14,28 @@ function getMadrid(){
 }
 function getParques(){
   return new Promise((resolve, reject) => {
-    axios.get('python/geoJsons/ENP_CMadrid.geojson.json')
+    axios.get(path + 'ENP_CMadrid.geojson.json?' + Date.now().toString())
     .then((response) => {
       resolve(response.data)
     }).catch((err) => {
       reject(err)
     })
-  })  
+  })
 }
 function getComarcas(){
   return new Promise((resolve, reject) => {
-    axios.get('python/geoJsons/ComarcasAgrariasCM.geojson.json')
+    axios.get(path + 'ComarcasAgrariasCM.geojson.json?' + Date.now().toString())
     .then((response) => {
       resolve(response.data)
     }).catch((err) => {
       reject(err)
     })
-  })  
+  })
 }
 
 function loadJSON(){
   return new Promise((resolve, reject) => {
-    axios.get('data.json').then((response) => {
+    axios.get(path + 'data.json').then((response) => {
       resolve(response.data);
     }).catch((err) => { reject(err)})
   });
@@ -43,18 +47,9 @@ function insertData(geoLocations, data){
   if(  Object.keys(data[desc]).includes('centroid_y') &&  Object.keys(data[desc]).includes('centroid_x') ){
     let coordinate = L.latLng(parseFloat(data[desc].centroid_y),parseFloat(data[desc].centroid_x))
     poligon = leafletPip.pointInLayer(coordinate,gjLayer, false)
-    console.log(poligon)
-    console.log(  gjLayer.getLayer(poligon[0]._leaflet_id).feature.properties)
+    // console.log(poligon)
+    // console.log(gjLayer.getLayer(poligon[0]._leaflet_id).feature.properties)
   }
 
   }
 }
-// function updateData(){
-//   return new Promise((resolve, reject) => {
-//     loadJSON().then((data) => {
-//       resolve(JSON.parse(data))
-//     }).catch((err) =>{
-//       reject(err)
-//     });
-//   })
-// }

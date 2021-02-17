@@ -3,14 +3,15 @@ import urllib.request
 import urllib.parse
 import json
 from shapely.geometry import shape, Point
-packageListUrl='https://gopausa.oeg-upm.net/api/3/action/package_list'
-packageInfoUrl='https://gopausa.oeg-upm.net/api/3/action/package_show?id='
-datasetLink = 'https://gopausa.oeg-upm.net/dataset/'
+packageListUrl='https://gopausa.linkeddata.es/api/3/action/package_list'
+packageInfoUrl='https://gopausa.linkeddata.es/api/3/action/package_show?id='
+datasetLink = 'https://gopausa.linkeddata.es/dataset/'
 links = [
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/ComarcasAgrariasCM.geojson.json',
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/madrid.distritos.geojson.json'
             ]
-
+geojsonPath = './geojsons/'
+codePath = "./"
 def getPackageList():
     try:
         res = urllib.request.urlopen(packageListUrl)
@@ -28,24 +29,31 @@ def getPackageList():
         raise
 def getPackageData(packages):
     result = {}
+    oo= False
     for package in packages:
         try:
             res = urllib.request.urlopen(packageInfoUrl + package)
             resJson = json.loads(res.read())
-            if('success' in resJson.keys() and 
+            #if( not oo):
+                # oo=True
+                # print(json.dumps(resJson, indent=2))
+            if('success' in resJson.keys() and
                 resJson['success'] is True and
-                'result' in resJson.keys() and 
+                'result' in resJson.keys() and
                 'descriptor_geografico' in resJson['result'].keys() and
                 len(resJson['result']['descriptor_geografico']) > 0
                 ):
-                data =  resJson['result']['descriptor_geografico'].split(' ')
-                result[data[0]] = {
-                        'datasetName': package, 
+                data =  resJson['result']['descriptor_geografico'].split('\t')
+                name = resJson['result']['title']
+                if(data[0] not in result.keys()):
+                    result[data[0]] = {'datasets':[]}
+                result[data[0]]['datasets'].append({
+                        'datasetName': package,
                         'desc':data[0],
-                        'name':data[1] if len(data) > 1 else "",
+                        'name':name,
                         'link':datasetLink + package
-                        }
-               
+                        })
+
             else:
                 raise ValueError('Invalid dataset: ' + package)
         except ValueError as vErr:
@@ -57,7 +65,7 @@ def getPackageData(packages):
             raise
     return result
 def linkDataWithCoordinates(data):
-    descriptores = json.loads(str(open('descriptores.json').read()))
+    descriptores = json.loads(str(open(codePath + 'descriptores.json').read()))
     result = {}
     for descriptor in descriptores.keys():
         if descriptor in data.keys():
@@ -70,43 +78,51 @@ def linkDataWithCoordinates(data):
     return result
 def downloadGeojsons():
     for link in links:
-        os.system("wget -O ./geoJsons/" + link.split("/")[-1] + " " + link)
+        res = urllib.request.urlopen(link)
+        resJson = json.loads(res.read().decode('utf-8'))
+        f = open(geojsonPath  + link.split("/")[-1], 'w', encoding='utf-8')
+        f.write(json.dumps(resJson, indent=2))
+        f.close()
+        #os.system("wget -O /geojsons/" + link.split("/")[-1] + " " + link)
 def addDatasetsToGeojsons(datasets):
     geoJsons = []
     for link in links:
-        geoJsons.append(json.loads(open('./geoJsons/' + link.split("/")[-1]).read()))
+        geoJsons.append(json.loads(open(geojsonPath  + link.split("/")[-1]).read()))
     for i,geoJson in enumerate(geoJsons):
         for j,feature in enumerate(geoJson["features"]):
             polygon = shape(feature['geometry'])
             geoJsons[i]["features"][j]["properties"]['datasets'] = []
             includedDatasets = 0
-            print(polygon.bounds)
             for desc in datasets:
-                if("centroid_x" in datasets[desc].keys() and "centroid_y" in datasets[desc].keys()):
+                if("centroid_x" in datasets[desc].keys() and 
+                "centroid_y" in datasets[desc].keys() and 
+                datasets[desc]['centroid_x'] != '' and 
+                datasets[desc]['centroid_y'] != ''):
+                    # print(datasets[desc])
                     point = Point(float(datasets[desc]["centroid_x"]), float(datasets[desc]["centroid_y"]))
-                    print("DONDE METEREMOS ESTE PUNTO? " + str(point))
                     if(polygon.contains(point)):
-                        print("METEMOS " + desc + " EN " + links[i].split("/")[-1])
-                        geoJsons[i]["features"][j]["properties"]["datasets"].append(datasets[desc])
+                        geoJsons[i]["features"][j]["properties"].update(datasets[desc])
                         includedDatasets += 1
             if includedDatasets == len(datasets):
                 break
-        with open('./geoJsons/'+ links[i].split("/")[-1], 'w') as f:
+        with open(geojsonPath + links[i].split("/")[-1], 'w') as f:
             f.write(json.dumps(geoJsons[i], indent=2))
 
 
-                    
+
 
 def main():
     packages = getPackageList()
-    print(packages)
+    #print(packages)
     packagesData = getPackageData(packages)
+    #print(json.dumps(packagesData, indent=2))
+    
     data = linkDataWithCoordinates(packagesData)
-    downloadGeojsons();
+    downloadGeojsons()
     addDatasetsToGeojsons(data)
-    with open('datasetsInfo.json', 'w') as f:
+    with open(codePath + 'datasetsInfo.json', 'w') as f:
         f.write(json.dumps(data, indent=2))
 #    print(json.dumps(data, indent=2))
-
+    
 if __name__ == '__main__':
     main()
