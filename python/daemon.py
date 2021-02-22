@@ -10,8 +10,8 @@ links = [
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/ComarcasAgrariasCM.geojson.json',
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/madrid.distritos.geojson.json'
             ]
-geojsonPath = './geojsons/'
-codePath = "./"
+geojsonPath = '/geojsons/'
+codePath = "/code/"
 def getPackageList():
     try:
         res = urllib.request.urlopen(packageListUrl)
@@ -94,9 +94,9 @@ def addDatasetsToGeojsons(datasets):
             geoJsons[i]["features"][j]["properties"]['datasets'] = []
             includedDatasets = 0
             for desc in datasets:
-                if("centroid_x" in datasets[desc].keys() and 
-                "centroid_y" in datasets[desc].keys() and 
-                datasets[desc]['centroid_x'] != '' and 
+                if("centroid_x" in datasets[desc].keys() and
+                "centroid_y" in datasets[desc].keys() and
+                datasets[desc]['centroid_x'] != '' and
                 datasets[desc]['centroid_y'] != ''):
                     # print(datasets[desc])
                     point = Point(float(datasets[desc]["centroid_x"]), float(datasets[desc]["centroid_y"]))
@@ -116,13 +116,13 @@ def main():
     #print(packages)
     packagesData = getPackageData(packages)
     #print(json.dumps(packagesData, indent=2))
-    
+
     data = linkDataWithCoordinates(packagesData)
     downloadGeojsons()
     addDatasetsToGeojsons(data)
     with open(codePath + 'datasetsInfo.json', 'w') as f:
         f.write(json.dumps(data, indent=2))
 #    print(json.dumps(data, indent=2))
-    
+
 if __name__ == '__main__':
     main()
