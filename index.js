@@ -28,8 +28,9 @@ function Map(geoLocations){
   
   
   
-    function getColor(d) {
-        return d == 0 ? '#38b500' : '#f6d743'
+    function getColor(data) {
+        const d = data.length
+        return d == 0 ? '#38b500' : d < 3 ? '#f6d743': d < 10 ? '#fb8500':'#e63946'
    
     }
   

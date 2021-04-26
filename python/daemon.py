@@ -8,10 +8,11 @@ packageInfoUrl='https://gopausa.linkeddata.es/api/3/action/package_show?id='
 datasetLink = 'https://gopausa.linkeddata.es/dataset/'
 links = [
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/ComarcasAgrariasCM.geojson.json',
-            'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/madrid.distritos.geojson.json'
+            'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/madrid.distritos.geojson.json',
+            'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/comunidadMadrid.geojson.json'
             ]
-geojsonPath = '/geojsons/'
-codePath = "/code/"
+geojsonPath = './geojsons/'
+codePath = "./"
 def getPackageList():
     try:
         res = urllib.request.urlopen(packageListUrl)
