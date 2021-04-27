@@ -151,17 +151,11 @@ function Map(geoLocations){
   }
   function init() {
   // Parse JSON string into object
-      let datasetInfo = null
-      loadJSON().then((data) => {
-        //   console.log(data);
-          datasetInfo = data;
-          return getMadrid();
-      }).then((data) => {
-          Map(data);
-          insertData(data,datasetInfo)
+      getComMadrid().then((data) => {
+        Map(data);
       })
       .catch((err) => {
-        //   console.log(err)
+           console.log(err)
       });
   }
   function changeLayer(layerName){

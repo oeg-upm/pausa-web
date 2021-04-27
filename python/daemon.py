@@ -11,8 +11,8 @@ links = [
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/madrid.distritos.geojson.json',
             'https://raw.githubusercontent.com/oeg-upm/pausa-web/master/comunidadMadrid.geojson.json'
             ]
-geojsonPath = './geojsons/'
-codePath = "./"
+geojsonPath = '/geojsons/'
+codePath = "/code/"
 def getPackageList():
     try:
         res = urllib.request.urlopen(packageListUrl)
