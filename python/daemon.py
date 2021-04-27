@@ -92,7 +92,8 @@ def addDatasetsToGeojsons(datasets):
     for i,geoJson in enumerate(geoJsons):
         for j,feature in enumerate(geoJson["features"]):
             polygon = shape(feature['geometry'])
-            geoJsons[i]["features"][j]["properties"]['datasets'] = []
+            if('datasets' not in geoJsons[i]["features"][j]["properties"].keys()):
+                geoJsons[i]["features"][j]["properties"]['datasets'] = []
             includedDatasets = 0
             for desc in datasets:
                 if("centroid_x" in datasets[desc].keys() and
@@ -102,7 +103,10 @@ def addDatasetsToGeojsons(datasets):
                     # print(datasets[desc])
                     point = Point(float(datasets[desc]["centroid_x"]), float(datasets[desc]["centroid_y"]))
                     if(polygon.contains(point)):
+                        print(f'Includes: {desc}')
+                        _datasets = geoJsons[i]["features"][j]["properties"]["datasets"] 
                         geoJsons[i]["features"][j]["properties"].update(datasets[desc])
+                        geoJsons[i]["features"][j]["properties"]["datasets"] += _datasets 
                         includedDatasets += 1
             if includedDatasets == len(datasets):
                 break

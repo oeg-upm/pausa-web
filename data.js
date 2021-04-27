@@ -1,6 +1,16 @@
 //const path = "/base/data/"
 const path = "/python/geojsons/"
-
+function getComMadrid(){
+  console.log(path + 'comunidadMadrid.geojson.json')
+  return new Promise((resolve, reject) => {
+    axios.get(path + 'comunidadMadrid.geojson.json?' + Date.now().toString())
+    .then((response) => {
+      resolve(response.data)
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+}
 function getMadrid(){
 console.log(path + 'madrid.distritos.geojson.json')
   return new Promise((resolve, reject) => {

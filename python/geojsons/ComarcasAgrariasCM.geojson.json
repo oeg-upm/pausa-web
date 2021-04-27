@@ -25,6 +25,12 @@
             "desc": "2801",
             "name": "La transformaci\u00f3n del paisaje en la Sierra Pobre de Madrid. Influencia de la agricultura y ganader\u00eda en la extinci\u00f3n local de los pinares",
             "link": "https://gopausa.linkeddata.es/dataset/transformacion-paisaje-sierra-pobre-de-madrid-influencia-agricultura-y-ganaderia"
+          },
+          {
+            "datasetName": "inventario-dasometrico-botanico-vegetacion-lenosa-la-acebeda",
+            "desc": "28001",
+            "name": "Inventario dasom\u00e9trico - bot\u00e1nico de la vegetaci\u00f3n le\u00f1osa en el t\u00e9rmino municipal de la Acebeda (Madrid)",
+            "link": "https://gopausa.linkeddata.es/dataset/inventario-dasometrico-botanico-vegetacion-lenosa-la-acebeda"
           }
         ],
         "desc": "2801",
@@ -26371,6 +26377,36 @@
             "desc": "28133",
             "name": "Plantaci\u00f3n de 5Ha de vi\u00f1edo en producci\u00f3n ecol\u00f3gica en en San Mart\u00edn de Valdeiglesias, Comunidad de Madrid",
             "link": "https://gopausa.linkeddata.es/dataset/5ha-vinedo-ecologica-san-martin-de-valdeiglesias"
+          },
+          {
+            "datasetName": "https-cutt-ly-kfxrdxu",
+            "desc": "28123",
+            "name": "El Parque Agrario, una figura de transici\u00f3n hacia nuevos modelos de gobernanza territorial y alimentaria",
+            "link": "https://gopausa.linkeddata.es/dataset/https-cutt-ly-kfxrdxu"
+          },
+          {
+            "datasetName": "influencia-patrones-laboreo-respuesta-erosiva-episodios-extremos-paisajes-secano-mediterraneo",
+            "desc": "28092",
+            "name": "Influencia de los patrones de laboreo sobre la respuesta erosiva durante episodios extremos de erosi\u00f3n en paisajes agr\u00edcolas de secano mediterr\u00e1neo",
+            "link": "https://gopausa.linkeddata.es/dataset/influencia-patrones-laboreo-respuesta-erosiva-episodios-extremos-paisajes-secano-mediterraneo"
+          },
+          {
+            "datasetName": "test20",
+            "desc": "28080",
+            "name": "test20",
+            "link": "https://gopausa.linkeddata.es/dataset/test20"
+          },
+          {
+            "datasetName": "efectos-cubierta-vegetal-en-olivares-semiaridos",
+            "desc": "28043",
+            "name": "Efectos de la cubierta vegetal en olivares semi\u00e1ridos sobre la escorrent\u00eda y la infiltraci\u00f3n en diferentes condiciones de humedad del suelo",
+            "link": "https://gopausa.linkeddata.es/dataset/efectos-cubierta-vegetal-en-olivares-semiaridos"
+          },
+          {
+            "datasetName": "influencia-del-abonado-actividad-enzimatica-suelo-y-calidad-avena-veza",
+            "desc": "28038",
+            "name": "Influencia del abonado con compost y fertilizantes solubles sobre la actividad enzim\u00e1tica del suelo y la calidad del cultivo avena-veza en una finca de la alta monta\u00f1a madrile\u00f1a",
+            "link": "https://gopausa.linkeddata.es/dataset/influencia-del-abonado-actividad-enzimatica-suelo-y-calidad-avena-veza"
           }
         ],
         "desc": "28133",
@@ -52345,6 +52381,54 @@
             "desc": "28132",
             "name": "28132-DatosClimaticosSanMartinVega",
             "link": "https://gopausa.linkeddata.es/dataset/28132-datosclimaticossanmartinvega"
+          },
+          {
+            "datasetName": "modelo-clasificacion-y-valoracion-vias-pecuarias",
+            "desc": "28128",
+            "name": "Modelo de clasificaci\u00f3n y valoraci\u00f3n multifuncional de una red de v\u00edas pecuarias: aplicaci\u00f3n a dos subcomarcas madrile\u00f1as",
+            "link": "https://gopausa.linkeddata.es/dataset/modelo-clasificacion-y-valoracion-vias-pecuarias"
+          },
+          {
+            "datasetName": "alimentacion-red-municipal-escuelas-infantiles-ayuntamiento-madrid",
+            "desc": "28079",
+            "name": "Alimentaci\u00f3n saludable y sostenible en la Red Municipal de Escuelas Infantiles del Ayuntamiento de Madrid",
+            "link": "https://gopausa.linkeddata.es/dataset/alimentacion-red-municipal-escuelas-infantiles-ayuntamiento-madrid"
+          },
+          {
+            "datasetName": "https-cutt-ly-rfxypma",
+            "desc": "28079",
+            "name": "Movilizaci\u00f3n social y alternativas alimentarias en \u00e1reas urbanas: los grupos de consumo agroecol\u00f3gico en Madrid",
+            "link": "https://gopausa.linkeddata.es/dataset/https-cutt-ly-rfxypma"
+          },
+          {
+            "datasetName": "https-cutt-ly-zflfqfy",
+            "desc": "28079",
+            "name": "Redes alimentarias alternativas en grandes ciudades: los mercados de productores agrarios en Madrid",
+            "link": "https://gopausa.linkeddata.es/dataset/https-cutt-ly-zflfqfy"
+          },
+          {
+            "datasetName": "nuevas-practicas-colaborativas-grupo-de-consumo-agroecologico-vallecas",
+            "desc": "28079",
+            "name": "Nuevas pr\u00e1cticas colaborativas, cuesti\u00f3n alimentaria y desarrollo urbano: los grupo de consumo agroecol\u00f3gico en Vallecas, Madrid.",
+            "link": "https://gopausa.linkeddata.es/dataset/nuevas-practicas-colaborativas-grupo-de-consumo-agroecologico-vallecas"
+          },
+          {
+            "datasetName": "sensibilidad-leguminosas-contaminacion-atmosferica",
+            "desc": "28079",
+            "name": "La sensibilidad de las leguminosas a la contaminaci\u00f3n atmosf\u00e9rica",
+            "link": "https://gopausa.linkeddata.es/dataset/sensibilidad-leguminosas-contaminacion-atmosferica"
+          },
+          {
+            "datasetName": "propuesta-mejoras-silvopastorales-y-uso-recreativo-dehesa-boyal",
+            "desc": "28047",
+            "name": "Propuesta de Mejoras Silvopastorales y de Uso Recreativo del monte \u201cLa Dehesa Boyal\u201d de Collado Villalba",
+            "link": "https://gopausa.linkeddata.es/dataset/propuesta-mejoras-silvopastorales-y-uso-recreativo-dehesa-boyal"
+          },
+          {
+            "datasetName": "test100",
+            "desc": "28026",
+            "name": "Test100",
+            "link": "https://gopausa.linkeddata.es/dataset/test100"
           }
         ],
         "desc": "28132",
@@ -77415,6 +77499,42 @@
             "desc": "28120",
             "name": "Caracterizaci\u00f3n ed\u00e1fica de los principales pastizales naturales del valle del Paular (Madrid)",
             "link": "https://gopausa.linkeddata.es/dataset/caracterizacion-edafica-pastizales-naturales-valle-del-paular"
+          },
+          {
+            "datasetName": "https-cutt-ly-jfxdvow",
+            "desc": "28110",
+            "name": "Iniciativa agroecol\u00f3gica Bajo el Asfalto est\u00e1 la Huerta (BAH!). Haciendo piruetas entre el crecimiento del proyecto y la participaci\u00f3n.",
+            "link": "https://gopausa.linkeddata.es/dataset/https-cutt-ly-jfxdvow"
+          },
+          {
+            "datasetName": "manejo-recursos-fitogeneticos-bajo-el-asfalto-esta-la-huerta",
+            "desc": "28110",
+            "name": "Aproximaci\u00f3n al manejo de los recursos fitogen\u00e9ticos en nuevas cooperativas autogestionadas de alimentaci\u00f3n y agricultura : Una perspectiva agroecol\u00f3gica, una mirada desde la democracia radical. Estudio de caso: Cooperativa \"Bajo el asfalto est\u00e1 la huerta\"",
+            "link": "https://gopausa.linkeddata.es/dataset/manejo-recursos-fitogeneticos-bajo-el-asfalto-esta-la-huerta"
+          },
+          {
+            "datasetName": "pilosella-officinarum-cubierta-vegetal-vina-ecologica",
+            "desc": "28014",
+            "name": "Uso de Pilosella officinarum como cubierta vegetal bajo las l\u00edneas de cultivo en vi\u00f1a ecol\u00f3gica",
+            "link": "https://gopausa.linkeddata.es/dataset/pilosella-officinarum-cubierta-vegetal-vina-ecologica"
+          },
+          {
+            "datasetName": "beneficios-leguminosas-agricultura-de-conservacion",
+            "desc": "28005",
+            "name": "Los beneficios de las leguminosas en agricultura de conservaci\u00f3n. Un caso de estudio.",
+            "link": "https://gopausa.linkeddata.es/dataset/beneficios-leguminosas-agricultura-de-conservacion"
+          },
+          {
+            "datasetName": "experiencias-leguminosas-control-erosion",
+            "desc": "28005",
+            "name": "Experiencias con leguminosas para el control de la erosi\u00f3n",
+            "link": "https://gopausa.linkeddata.es/dataset/experiencias-leguminosas-control-erosion"
+          },
+          {
+            "datasetName": "perdida-nutrientes-distintos-tipos-de-usos",
+            "desc": "28005",
+            "name": "P\u00e9rdida de nutrientes de suelos con distintos tipos de usos del territorio en el centro de la pen\u00ednsula ib\u00e9rica",
+            "link": "https://gopausa.linkeddata.es/dataset/perdida-nutrientes-distintos-tipos-de-usos"
           }
         ],
         "desc": "28120",
@@ -93707,6 +93827,42 @@
             "desc": "28091",
             "name": "Hacia un modelo europeo de extensi\u00f3n rural agroecol\u00f3gica. Praxis participativas para la transici\u00f3n agroecol\u00f3gica. Un estudio de caso en Morata de Taju\u00f1a, Madrid.",
             "link": "https://gopausa.linkeddata.es/dataset/hacia-un-modelo-europeo-extension-rural-agroecologica-estudio-de-caso-morata-de-tajuna-madrid"
+          },
+          {
+            "datasetName": "https-apps-fomento-gob-es-cvp-handlers-pdfhandler-ashx-idpub-bp1027",
+            "desc": "28058",
+            "name": "El Parque Agrario: Planificaci\u00f3n estrat\u00e9gica para la preservaci\u00f3n y gesti\u00f3n de los espacios agrarios metropolitanos",
+            "link": "https://gopausa.linkeddata.es/dataset/https-apps-fomento-gob-es-cvp-handlers-pdfhandler-ashx-idpub-bp1027"
+          },
+          {
+            "datasetName": "huerta-experimental-informe-resultados-2017-acelga-y-repollo",
+            "desc": "28058",
+            "name": "Huerta experimental. Informe resultados 2017 Acelga y Repollo",
+            "link": "https://gopausa.linkeddata.es/dataset/huerta-experimental-informe-resultados-2017-acelga-y-repollo"
+          },
+          {
+            "datasetName": "huertas-y-campos-fuenlabrada-paisaje-agrario",
+            "desc": "28058",
+            "name": "Huertas y campos de Fuenlabrada. Un paisaje agrario con historia y futuro",
+            "link": "https://gopausa.linkeddata.es/dataset/huertas-y-campos-fuenlabrada-paisaje-agrario"
+          },
+          {
+            "datasetName": "patrimonializacion-local-paisaje-agrario-parque-agrario-fuenlabrada",
+            "desc": "28058",
+            "name": "Patrimonializaci\u00f3n local del paisaje agrario periurbano. La experiencia del Parque Agrario de Fuenlabrada",
+            "link": "https://gopausa.linkeddata.es/dataset/patrimonializacion-local-paisaje-agrario-parque-agrario-fuenlabrada"
+          },
+          {
+            "datasetName": "recuperacion-estructura-funcionalidad-ecologica-social-espacio-agricola-periurbano",
+            "desc": "28058",
+            "name": "Recuperaci\u00f3n de la estructura y funcionalidad ecol\u00f3gica y social de un espacio agr\u00edcola periurbano. Caso del municipio de Fuenlabrada",
+            "link": "https://gopausa.linkeddata.es/dataset/recuperacion-estructura-funcionalidad-ecologica-social-espacio-agricola-periurbano"
+          },
+          {
+            "datasetName": "sistemas-agraolimentarios-apropiacion-territorio-avinon-y-de-madrid",
+            "desc": "28058",
+            "name": "Sistemas agraolimentarios: apropiaci\u00f3n del territorio a trav\u00e9s de la alimentaci\u00f3n. Los ejemplos de Avi\u00f1\u00f3n y de Madrid",
+            "link": "https://gopausa.linkeddata.es/dataset/sistemas-agraolimentarios-apropiacion-territorio-avinon-y-de-madrid"
           }
         ],
         "desc": "28091",
@@ -134167,6 +134323,18 @@
             "desc": "2806",
             "name": "Secanos agr\u00edcolas periurbanos en Madrid. Iniciativas para su conservaci\u00f3n y viabilidad en el marco de las renovadas pol\u00edticas agroalimentarias locales",
             "link": "https://gopausa.linkeddata.es/dataset/secanos-agricolas-periurbanos-conservacion-y-viabilidad-politicas-locales"
+          },
+          {
+            "datasetName": "28130-datosclimaticossanfernandohenares",
+            "desc": "28130",
+            "name": "28130-DatosClimaticosSanFernandoHenares",
+            "link": "https://gopausa.linkeddata.es/dataset/28130-datosclimaticossanfernandohenares"
+          },
+          {
+            "datasetName": "evaluacion-productividad-olivo-secano-y-regadio",
+            "desc": "28013",
+            "name": "Evaluaci\u00f3n de la productividad de distintas variedades de olivo en la Comunidad de Madrid bajo condiciones de secano y regad\u00edo",
+            "link": "https://gopausa.linkeddata.es/dataset/evaluacion-productividad-olivo-secano-y-regadio"
           }
         ],
         "desc": "2806",

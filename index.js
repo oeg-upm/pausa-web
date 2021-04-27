@@ -180,13 +180,17 @@ function Map(geoLocations){
             //    console.log(layerName)
             //    console.log(err)
            })
-      }else{
+      }else if(layerName== 'Distritos'){
           getMadrid().then((data) =>{
               Map(data);
           }).catch((err) => {
             //   console.log(layerName)
             //   console.log(err)
           })
+      }else{
+        getComMadrid().then((data) => {
+          Map(data)
+        }).catch((err) => {console.log(err)})
       }
       $("#filtro").html(layerName + "")
   
