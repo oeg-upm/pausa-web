@@ -131,6 +131,21 @@ function Map(geoLocations){
                 click: (e) =>{showDatasets(layer.feature.properties)}
             });
             let datasetLength= Object.keys(layer.feature.properties).includes('datasets') ?layer.feature.properties.datasets.length.toString():'0';
+            const myIcon = L.divIcon({
+              className: 'datasetIndicatorDiv',
+              html: `<span class="datasetIndicator my-auto">${datasetLength}</span>`,
+              iconSize: [25, 25],
+              //iconAnchor: [18, 30]
+              iconAnchor: [10, 33]
+            });
+            const bounds = layer.getBounds();
+            const latLng = bounds.getCenter();
+            if(datasetLength > 0){
+              L.marker(latLng,{
+                icon:myIcon
+              }).addTo(map)
+            }
+
             layer.bindTooltip(`Datasets: ${datasetLength}`,{opacity:1}).bringToFront()
           //   layer.bindPopup(function (layer){
                 // console.log(layer.feature.properties.adm0_a3);

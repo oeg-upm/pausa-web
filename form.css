@@ -49,3 +49,17 @@ html, body {
   border: 1px solid #ccc;
   border-top: none;
 }
+.datasetIndicator{
+color: #f1f1f1!important;
+vertical-align: middle;
+
+}
+.datasetIndicatorDiv{
+  background: #707070;
+  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  border: 2px solid white;
+  vertical-align: middle;
+  font-weight: bold;
+}
